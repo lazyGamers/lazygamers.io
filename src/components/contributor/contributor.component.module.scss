@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.image {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100px;
+    height: auto;
+  }
+}
+.name {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+.job {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 14px;
+}

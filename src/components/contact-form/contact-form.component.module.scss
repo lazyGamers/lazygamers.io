@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.contact-form-content {
+  display: flex;
+  justify-content: space-between;
+
+  .half-side {
+    width: 50%;
+    padding: 0 40px;
+  }
+  .contact-form {
+
+    button {
+      background-color: $red-200;
+      border: none;
+      color: $white;
+      padding: 10px 60px;
+    }
+    button[disabled] {
+      opacity: 0.75;
+    }
+  }
+  .contact-info {
+
+  }
+}

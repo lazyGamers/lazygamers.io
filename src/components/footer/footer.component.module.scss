@@ -1,0 +1,55 @@
+@import "../../styles/_variables.scss";
+
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 0;
+
+  .sections {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+
+    .section {
+      margin-right: 60px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .section-title {
+        text-transform: uppercase;
+        font-weight: 600;
+
+        span {
+          border-bottom: 2px solid $blue-100;
+          padding-bottom: 4px;
+        }
+      }
+      .section-content {
+        margin-top: 20px;
+
+        .section-link {
+          color: $white;
+          margin-bottom: 10px;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .trademark {
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+

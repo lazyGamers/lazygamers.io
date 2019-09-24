@@ -1,0 +1,53 @@
+@import "../styles/variables";
+
+.page-header {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+              url("../media/images/header-photo.jpeg");
+  background-size: cover;
+  opacity: 0.75;
+  position: relative;
+  top: -60px;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.header-section {
+  margin-top: 160px; // 100px from navbar
+  color: $white;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 52px;
+  }
+  .subtitle {
+    font-size: 26px;
+  }
+  .contribution {
+    margin-top: 60px;
+
+    button {
+      background-color: $red-300;
+      border: none;
+      color: $white;
+      font-size: 24px;
+      padding: 10px 60px;
+    }
+  }
+}
+.news-section {
+  padding-bottom: 60px;
+
+  h1 {
+    margin-bottom: 60px;
+  }
+  .news-extract {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../styles/variables";
+@import "../../styles/responsive";
+
+.page-header {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+              url("../../media/images/about-header-photo.jpg");
+  background-size: cover;
+  background-position: 0 350px;
+  opacity: 0.75;
+  position: relative;
+  top: -60px;
+  min-height: 40vh;
+  height: 100%;
+}
+
+.header-section {
+  margin-top: 100px; // 40px from navbar
+  color: $white;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 52px;
+  }
+}
+
+.page-content {
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.contribution {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+
+  button {
+    background-color: $red-200;
+    border: none;
+    color: $white;
+    font-size: 24px;
+    padding: 10px 60px;
+  }
+}
+.section-break {
+  margin-top: 60px;
+}
+
+.teams {
+  margin-top: 40px;
+
+  h3 {
+    margin-top: 60px;
+  }
+}
+
+.team-lead {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.team-contributors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .contributor {
+    width: 25%;
+    padding: 25px;
+  }
+}
+
+@include device-specific($pc) {
+  .condensed-content {
+    width: 40% !important;
+  }
+}

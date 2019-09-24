@@ -1,0 +1,42 @@
+@import "../../styles/variables";
+
+header {
+  height: 60px;
+  z-index: 10;
+  position: relative;
+}
+.navbar-override {
+  padding: 0 !important;
+
+  .brand-override {
+    font-size: 2rem;
+    font-family: $font-title;
+    color: $white !important;
+  }
+  .navbar-links-override {
+    justify-content: flex-end;
+
+    .nav-override {
+      margin-right: 0 !important;
+      a {
+        color: $white !important;
+      }
+    }
+  }
+}
+.light-theme {
+  .brand-override {
+    color: $white !important;
+  }
+  .navbar-links-override .nav-override a {
+    color: $white !important;
+  }
+}
+.dark-theme {
+  .brand-override {
+    color: $black !important;
+  }
+  .navbar-links-override .nav-override a {
+    color: $black !important;
+  }
+}

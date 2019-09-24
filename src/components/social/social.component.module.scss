@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.social-links {
+  padding: 40px 0 20px 0;
+  display: flex;
+  justify-content: center;
+
+  .social-link {
+    font-size: 40px;
+    color: $white;
+    margin-right: 40px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

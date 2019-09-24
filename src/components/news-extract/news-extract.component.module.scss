@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.news-content {
+  .news-title {
+    margin-bottom: 5px !important;
+  }
+  small {
+    margin-bottom: 20px;
+    display: block;
+    font-style: italic;
+  }
+  .more-link {
+    a {
+      text-decoration: none;
+      color: $blue-100;
+      span {
+        margin-right: 8px;
+      }
+    }
+  }
+}
