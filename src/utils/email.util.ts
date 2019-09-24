@@ -2,7 +2,7 @@ export interface EmailData {
     name: string;
     email: string;
     message: string;
-    "contact-form"?: string;
+    "form-name"?: string;
     itsatrap?: string;
 }
 

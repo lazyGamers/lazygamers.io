@@ -20,13 +20,10 @@ export interface ContactFormState {
 }
 
 export class ContactForm extends React.Component<{}, ContactFormState> {
-
-    private contactFormInstance: HTMLFormElement | null;
     
     constructor(props: any) {
         super(props);
         
-        this.contactFormInstance = null;
         this.handleInputChange = this.handleInputChange.bind(this);
         this.sendEmail = this.sendEmail.bind(this);
         
@@ -76,20 +73,19 @@ export class ContactForm extends React.Component<{}, ContactFormState> {
     private sendEmail($event: FormEvent) {
         $event.preventDefault();
         
-        if (this.contactFormInstance) {
-            const data: EmailData = {
-                name: this.state.formData.name.value,
-                email: this.state.formData.email.value,
-                message: this.state.formData.message.value,
-                itsatrap: undefined,
-                "contact-form": this.contactFormInstance.name
-            };
-            EmailUtil.sendEmail(data).then(() => {
-                console.log("sent!");
-            }).catch(err => {
-                console.error(err);
-            });
-        }
+        const data: EmailData = {
+            name: this.state.formData.name.value,
+            email: this.state.formData.email.value,
+            message: this.state.formData.message.value,
+            itsatrap: undefined,
+            "form-name": "contact-form"
+        };
+        EmailUtil.sendEmail(data).then(() => {
+            console.log("sent!");
+        }).catch(err => {
+            console.error(err);
+        });
+        
     }
     
     private openInfo(): void {
@@ -115,7 +111,7 @@ export class ContactForm extends React.Component<{}, ContactFormState> {
                 <div className={`content ${contactStyle.contactFormContent}`}>
                     <div className={`${contactStyle.halfSide} ${contactStyle.contactForm}`} id="contact-form-section">
                         <form name="contact-form" data-netlify="true" data-netlify-honeypot="itsatrap"
-                            ref={ref => this.contactFormInstance = ref} onSubmit={this.sendEmail}>
+                            onSubmit={this.sendEmail}>
                             <div className={`form-group`}>
                                 <label>Name:</label>
                                 <input name="name"
@@ -151,8 +147,8 @@ export class ContactForm extends React.Component<{}, ContactFormState> {
                             If you want to join us, contact us using form or by writing e-mail to address:
                         </p>
                         <p>
-                            <span style={{cursor: "pointer"}} onClick={this.openInfo}>
-                                <img src={infoLazyGamersDark} alt="info" />
+                            <span style={{ cursor: "pointer" }} onClick={this.openInfo}>
+                                <img src={infoLazyGamersDark} alt="info"/>
                             </span>
                         </p>
                     </div>
