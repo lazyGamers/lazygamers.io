@@ -7,16 +7,17 @@ import { Social } from "../components/social/social.component";
 import newsTemplateStyle from "./news.template.module.scss";
 import { DateUtil } from "../utils/date.util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SEO } from "../components/seo";
 
 export default class NewsTemplate extends React.Component<TemplateModel, {}> {
     
     public render() {
         const {markdownRemark} = this.props.data;
         const {frontmatter, html} = markdownRemark;
-        console.log(this.props.data);
         
         return (
             <Layout menuTheme="dark">
+                <SEO title={frontmatter.title}/>
                 <div className={`wrapper`}>
                     <div className={`content ${newsTemplateStyle.newsContent} ${newsTemplateStyle.condensedContent}`}>
                         <div>

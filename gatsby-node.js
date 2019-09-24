@@ -28,8 +28,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
   
-  console.log(result.data.allMarkdownRemark.edges);
-  
   // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)

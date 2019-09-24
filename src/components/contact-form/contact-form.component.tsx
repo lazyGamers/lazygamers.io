@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 
 import contactStyle from "./contact-form.component.module.scss";
 import { ContactUtil } from "../../utils/contact.util";
@@ -73,7 +73,9 @@ export class ContactForm extends React.Component<{}, ContactFormState> {
         this.setState(newState);
     }
     
-    private sendEmail() {
+    private sendEmail($event: FormEvent) {
+        $event.preventDefault();
+        
         if (this.contactFormInstance) {
             const data: EmailData = {
                 name: this.state.formData.name.value,
@@ -113,7 +115,7 @@ export class ContactForm extends React.Component<{}, ContactFormState> {
                 <div className={`content ${contactStyle.contactFormContent}`}>
                     <div className={`${contactStyle.halfSide} ${contactStyle.contactForm}`} id="contact-form-section">
                         <form name="contact-form" data-netlify="true" data-netlify-honeypot="itsatrap"
-                            ref={ref => this.contactFormInstance = ref}>
+                            ref={ref => this.contactFormInstance = ref} onSubmit={this.sendEmail}>
                             <div className={`form-group`}>
                                 <label>Name:</label>
                                 <input name="name"
@@ -135,7 +137,7 @@ export class ContactForm extends React.Component<{}, ContactFormState> {
                                 {this.renderError("message")}
                             </div>
                             <div className="text-right mt-5">
-                                <button disabled={!this.state.formData.valid}>Send</button>
+                                <button type="submit" disabled={!this.state.formData.valid}>Send</button>
                             </div>
                         </form>
                     </div>
