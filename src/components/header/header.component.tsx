@@ -41,13 +41,14 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
                          ${headerStyle.navbarOverride}`}>
                             <Link to="/" className={`navbar-brand ${headerStyle.brandOverride}`}>LazyGamers</Link>
                             <button className="navbar-toggler" type="button"
-                                data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                                data-toggle="collapse" data-target="#navbar-links"
                                 aria-controls="navbar-links" aria-expanded="false"
-                                aria-label="Toggle navigation">
+                                aria-label="Toggle navigation" onClick={this.toggle}>
                                 <span className="navbar-toggler-icon"/>
                             </button>
                             
-                            <div className={`collapse navbar-collapse ${headerStyle.navbarLinksOverride}`} id="navbar-links">
+                            <div className={`${this.state.opened ? "" : "collapse"} navbar-collapse ${headerStyle.navbarLinksOverride}`}
+                                id="navbar-links">
                                 <ul className={`navbar-nav mr-auto mt-2 mt-lg-0 ${headerStyle.navOverride}`}>
                                     {headerLinks.map((link, index) => (
                                         <li className="nav-item" key={index}>

@@ -1,15 +1,16 @@
 @import "../../styles/variables";
+@import "../../styles/responsive";
 
 .contact-form-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .half-side {
     width: 50%;
     padding: 0 40px;
   }
   .contact-form {
-
     button {
       background-color: $red-200;
       border: none;
@@ -20,7 +21,23 @@
       opacity: 0.75;
     }
   }
-  .contact-info {
+}
 
+@include device-specific($phone) {
+  .half-side {
+    width: 100% !important;
+    padding: 0 15px;
+  }
+  .contact-form-content {
+    justify-content: center;
+  }
+}
+@include device-specific($tablet) {
+  .half-side {
+    width: 90% !important;
+    padding: 0 40px;
+  }
+  .contact-form-content {
+    justify-content: center;
   }
 }

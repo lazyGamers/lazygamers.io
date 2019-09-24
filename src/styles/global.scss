@@ -127,3 +127,13 @@ button, input, optgroup, select, textarea {
   font: inherit;
   margin: 0;
 }
+
+/* Bootstrap overrides */
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .15s ease;
+  -o-transition: height .15s ease;
+  transition: height .15s ease;
+}

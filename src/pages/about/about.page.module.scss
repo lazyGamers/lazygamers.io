@@ -78,3 +78,18 @@
     width: 40% !important;
   }
 }
+
+@include device-specific($tablet) {
+  .team-contributors {
+    .contributor {
+      width: 33%;
+    }
+  }
+}
+@include device-specific($phone) {
+  .team-contributors {
+    .contributor {
+      width: 50%;
+    }
+  }
+}
